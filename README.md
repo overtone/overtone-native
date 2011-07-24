@@ -3,9 +3,11 @@
 Supercollider build virtualmachines based on vagrant
 
 ## Dependencies
+ 
 
-** vagrant
-** Virtualbox
+ * ruby
+ * [vagrant](http://vagrantup.com/)
+ * [virtualbox](http://www.virtualbox.org/)
 
 ## License
 

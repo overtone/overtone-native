@@ -4,3 +4,5 @@ The macosx-snowleopard basebox consists of:
  * Xcode 3.2.3
  * Homebrew
  * Chef
+
+Diskutility -> Erase free space with 0

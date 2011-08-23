@@ -5,10 +5,12 @@ Vagrant::Config.run do |config|
 
   config.vm.box = "macosx-snowleopard"
   config.vm.forward_port("ssh", 22, 2225)
-  
+  config.vm.boot_mode = :gui
+  config.ssh.max_tries = 100
+
   Vagrant::Config.run do |config|
     config.vm.provision :shell, :path => "setup.sh"
-  end 
+  end
 
   config.ssh.private_key_path = "~/.ssh/id_overtone"
 end

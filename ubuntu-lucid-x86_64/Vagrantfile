@@ -3,9 +3,14 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
   config.vm.forward_port "ssh", 22, 2226
 
+  config.vm.boot_mode = :gui
+  config.ssh.max_tries = 100
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "vagrant_main"
+    chef.log_level = :debug
   end
+
 
 end

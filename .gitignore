@@ -4,3 +4,10 @@
 /ubuntu-lucid-x86_64/overtone-native-buildmaster/http.log
 /ubuntu-lucid-x86_64/overtone-native-buildmaster/twistd.log
 /ubuntu-lucid-x86_64/overtone-native-buildmaster/twistd.pid
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/sc3-plugins/*
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/supercollider/*
+/ubuntu-lucid-x86_64/overtone-native-buildslave/sc3-plugins/*
+/ubuntu-lucid-x86_64/overtone-native-buildslave/supercollider/*
+/ubuntu-lucid-x86_64/overtone-native-buildslave/twistd.hostname
+/ubuntu-lucid-x86_64/overtone-native-buildslave/twistd.log
+/ubuntu-lucid-x86_64/overtone-native-buildslave/twistd.pid

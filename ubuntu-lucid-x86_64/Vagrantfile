@@ -1,4 +1,8 @@
 Vagrant::Config.run do |config|
+  config.vm.customize do |vm|
+    vm.memory_size = 1024
+  end
+
   config.vm.box = "lucid64"
   config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
   config.vm.forward_port "ssh", 22, 2226
@@ -14,6 +18,5 @@ Vagrant::Config.run do |config|
     chef.add_recipe "vagrant_main"
     chef.log_level = :debug
   end
-
 
 end

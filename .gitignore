@@ -1,2 +1,6 @@
 .vagrant
 *.sqlite
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/gitpoller-workdir/
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/http.log
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/twistd.log
+/ubuntu-lucid-x86_64/overtone-native-buildmaster/twistd.pid

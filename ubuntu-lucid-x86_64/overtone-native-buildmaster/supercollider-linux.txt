@@ -1,0 +1,12 @@
+./build/server/plugins/*.so
+./build/server/supernova/supernova
+./build/server/supernova/libsupernova.a
+./build/server/scsynth/libscsynth.*
+./build/server/scsynth/scsynth
+./build/lang/sclang
+./build/lang/libsclang.so
+./build/editors/scel/el/*.el
+./build/QtCollider/libQtCollider.so
+./include/plugin_interface
+./SCClassLibrary
+./Help

@@ -10,7 +10,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port "buildbot pb",  9989, 9989
   config.vm.forward_port "buildbot web", 8010, 8010
 
-  config.vm.boot_mode = :gui
+#  config.vm.boot_mode = :gui
   config.ssh.max_tries = 100
 
   config.vm.provision :chef_solo do |chef|

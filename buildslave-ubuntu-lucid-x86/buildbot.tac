@@ -4,7 +4,7 @@ import os
 from twisted.application import service
 from buildslave.bot import BuildSlave
 
-basedir = r'/vagrant/overtone-native-buildslave'
+basedir = r'/vagrant/buildslave-ubuntu-lucid-x86'
 rotateLength = 10000000
 maxRotatedFiles = 10
 
@@ -27,9 +27,9 @@ except ImportError:
   # probably not yet twisted 8.2.0 and beyond, can't set log yet
   pass
 
-buildmaster_host = 'localhost'
+buildmaster_host = '10.0.0.2'
 port = 9989
-slavename = 'ubuntu-lucid-x86_64'
+slavename = 'ubuntu-lucid-x86'
 passwd = 'pass'
 keepalive = 600
 usepty = 0

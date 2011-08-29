@@ -1,3 +1,3 @@
 name "buildmaster"
 description "buildmaster"
-run_list "recipe[buildbot]"
+run_list "recipe[buildbot]", "recipe[buildmaster]"

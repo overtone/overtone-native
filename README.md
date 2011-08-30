@@ -56,8 +56,6 @@ after each boot:
     cd buildslave-macosx-snowleopard-x86_64
     buildslave start
 
-    ctrl-b d
-
 ## License
 
 Copyright (C) 2011 Fabian Aussems

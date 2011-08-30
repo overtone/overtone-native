@@ -11,6 +11,7 @@ Supercollider build virtualmachines based on vagrant
 ## Howto
 
 Install
+
  * RVM
  * gem install vagrant
  * install virtualbox-4.1  from http://www.virtualbox.org/
@@ -31,6 +32,7 @@ After preparing a basebox make a clone, and install
     brew install git
     brew install cmake
     brew install qt
+    brew install tmux
     easy_install virtualenv
     virtualenv --no-site-packages sandbox
     source sandbox/bin/activate
@@ -44,6 +46,7 @@ in ~/.bash_profile
 
 after each boot:
 
+    tmux
     diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://1165430`
     ln -s /Volumes/ramdisk /ramdisk
     mkdir /ramdisk/supercollider-macosx-snowleopard-x86_64
@@ -51,6 +54,8 @@ after each boot:
 
     cd buildslave-macosx-snowleopard-x86_64
     buildslave start
+
+    ctrl-b d
 
 ## License
 

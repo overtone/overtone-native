@@ -1,9 +1,9 @@
-./build/server/plugins/*.so
+./build/server/plugins/*.scx
 ./build/server/scsynth/libscsynth.*
 ./build/server/scsynth/scsynth
 ./build/lang/sclang
-./build/lang/libsclang.so
-./build/QtCollider/libQtCollider.so
+./build/lang/libsclang.dylib
+./build/QtCollider/libQtCollider.dylib
 ./include/plugin_interface
 ./SCClassLibrary
 ./build/editors
@@ -11,4 +11,4 @@
 ./Help
 ./sounds
 ./examples
-./platform/linux
+./platform/mac

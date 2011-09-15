@@ -1,11 +1,11 @@
 # overtone-native
 
-Supercollider build virtualmachines based on vagrant
+Supercollider build virtualmachines based on username
 
 ## Dependencies
 
  * ruby
- * [vagrant](http://vagrantup.com/)
+ * [username](http://vagrantup.com/)
  * [virtualbox](http://www.virtualbox.org/)
 
 ## Howto
@@ -13,7 +13,7 @@ Supercollider build virtualmachines based on vagrant
 Install
 
  * RVM
- * gem install vagrant
+ * gem install username
  * install virtualbox-4.1  from http://www.virtualbox.org/
 
 ## MacOSX
@@ -65,10 +65,11 @@ in ~/.bash_profile
 
     cd ~/buildslave-macosx-snowleopard-x86_64
 
-    export VIRTUAL_ENV=$HOME/sandbox
     ~/sandbox/bin/buildslave restart
 
 ## ~/Library/LaunchAgents/buildslave.plist
+
+Change username to your username
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -79,15 +80,15 @@ in ~/.bash_profile
 
       <key>ProgramArguments</key>
       <array>
-        <string>/Users/vagrant/start.sh</string>
+        <string>/Users/username/start.sh</string>
       </array>
 
       <key>EnvironmentVariables</key>
       <array>
         <key>PATH</key>
-        <string>/Users/vagrant/sandbox/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin</string>
+        <string>/Users/username/sandbox/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin</string>
         <key>VIRTUAL_ENV</key>
-        <string>/Users/vagrant/sandbox</string>
+        <string>/Users/username/sandbox</string>
       </array>
 
 

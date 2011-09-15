@@ -23,7 +23,6 @@ Prepare a basebox with:
  * MacOSX Snowleopard 10.6.3 x86_64
  * Xcode 3.2.3
  * Homebrew
- * Chef
 
 Diskutility -> Erase free space with 0
 
@@ -45,16 +44,69 @@ in ~/.bash_profile
 
     source sandbox/bin/activate
 
-after each boot:
-    
-    sudo -i
-    diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://1165430`
-    ln -s /Volumes/ramdisk /ramdisk
+
+## MacOSX start.sh in ~
+
+    #!/bin/sh
+
+    USER_NAME=$(/usr/bin/who am i | /usr/bin/awk '{print $1}')
+
+    if [ ! -d "/Volumes/ramdisk" ]; then
+      diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://1165430`
+      exec 5>"/Volumes/ramdisk/.lock.${USER_NAME}"  
+    fi
+
+    if [ ! -d "/ramdisk" ]; then
+      ln -s /Volumes/ramdisk /ramdisk
+    fi
+
     mkdir /ramdisk/supercollider-macosx-snowleopard-x86_64
     mkdir /ramdisk/sc3-plugins-macosx-snowleopard-x86_64
 
-    cd buildslave-macosx-snowleopard-x86_64
-    buildslave start
+    cd ~/buildslave-macosx-snowleopard-x86_64
+
+    export VIRTUAL_ENV=$HOME/sandbox
+    ~/sandbox/bin/buildslave restart
+
+## ~/Library/LaunchAgents/buildslave.plist
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+      <key>Label</key>
+      <string>buildslave</string>
+
+      <key>ProgramArguments</key>
+      <array>
+        <string>/Users/vagrant/start.sh</string>
+      </array>
+
+      <key>EnvironmentVariables</key>
+      <array>
+        <key>PATH</key>
+        <string>/Users/vagrant/sandbox/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin</string>
+        <key>VIRTUAL_ENV</key>
+        <string>/Users/vagrant/sandbox</string>
+      </array>
+
+
+      <key>RunAtLoad</key>
+      <true/>
+
+      <key>StandardErrorPath</key>
+      <string>/tmp/buildslave.err</string>
+
+      <key>StandardOutPath</key>
+      <string>/tmp/buildslave.out</string>
+    </dict>
+    </plist>
+
+load the launchagent
+
+    launchctl unload ~/Library/LaunchAgents/buildslave.plist
+    launchctl load ~/Library/LaunchAgents/buildslave.plist
+
 
 ## License
 

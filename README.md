@@ -5,18 +5,22 @@ Supercollider build virtualmachines based on username
 ## Dependencies
 
  * ruby
- * [username](http://vagrantup.com/)
+ * [vagrant](http://vagrantup.com/)
  * [virtualbox](http://www.virtualbox.org/)
 
-## Howto
+## On host systeem
 
 Install
 
  * RVM
- * gem install username
+ * gem install vagrant
  * install virtualbox-4.1  from http://www.virtualbox.org/
 
-## MacOSX
+to activate
+
+vagrant up
+
+## To setup the MacOSX buildslave
 
 Prepare a basebox with:
 

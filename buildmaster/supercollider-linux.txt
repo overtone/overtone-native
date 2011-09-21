@@ -12,3 +12,4 @@
 ./sounds
 ./examples
 ./platform/linux
+./build/external_libraries/*.so

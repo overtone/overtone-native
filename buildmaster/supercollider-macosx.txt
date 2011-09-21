@@ -12,3 +12,4 @@
 ./sounds
 ./examples
 ./platform/mac
+./build/external_libraries/*.dylib
